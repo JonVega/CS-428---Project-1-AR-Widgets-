@@ -16,7 +16,7 @@ public class dateTeller : MonoBehaviour
     // Update is called once per frame
     void UpdateTime()
     {
-    dateTextObject.GetComponent<TextMeshPro>().text = System.DateTime.Now.ToString("MM/dd/yyyy");  
+    dateTextObject.GetComponent<TextMeshPro>().text = System.DateTime.Now.ToString("dddd" + "\n" + "\n" + "MMMM d yyyy");  
     }
 }
 
