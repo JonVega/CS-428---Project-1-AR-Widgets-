@@ -10,13 +10,13 @@ public class dateTeller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
-    InvokeRepeating("UpdateTime", 0f, 10f);    
+    InvokeRepeating("UpdateTime", 0f, 30f); //update every 30 seconds    
     }
 
     // Update is called once per frame
     void UpdateTime()
     {
-    dateTextObject.GetComponent<TextMeshPro>().text = System.DateTime.Now.ToString("dddd" + "\n" + "\n" + "MMMM d yyyy");  
+    dateTextObject.GetComponent<TextMeshPro>().text = System.DateTime.Now.ToString("dddd" + "\n" + "\n" + "M/d/y");  
     }
 }
 
