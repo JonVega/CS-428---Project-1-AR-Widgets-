@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 using TMPro;
 using SimpleJSON;
 
-public class temperatureControl : MonoBehaviour
+public class humTeller : MonoBehaviour
 	{	
 	    public GameObject textTextObject;
 		string url = "http://api.openweathermap.org/data/2.5/weather?lat=41.88&lon=-87.6&APPID=da93369bfa44d34009b876ec8346a3ac&units=imperial";
@@ -39,10 +39,10 @@ public class temperatureControl : MonoBehaviour
 
 					JSONNode weatherData = JSON.Parse(webRequest.downloadHandler.text);
 					Debug.Log(weatherData);
-					textTextObject.GetComponent<TextMeshPro>().text = weatherData["main"]["temp"] + "F";
+					textTextObject.GetComponent<TextMeshPro>().text = weatherData["main"]["humidity"] + "%";
 					
-		        	transform.localScale += new Vector3(0, (float.Parse(weatherData["main"]["temp"]) * 0.001f  / 3.0f - 0.006f), 0);
-					transform.position += new Vector3(0, (float.Parse(weatherData["main"]["temp"]) * 0.001f / 3.0f - 0.006f), 0);
+		        	transform.localScale += new Vector3(0, (float.Parse(weatherData["main"]["humidity"]) * 0.001f  / 3.0f - 0.006f), 0);
+					transform.position += new Vector3(0, (float.Parse(weatherData["main"]["humidity"]) * 0.001f / 3.0f - 0.006f), 0);
 					
 	            }
 	        }
